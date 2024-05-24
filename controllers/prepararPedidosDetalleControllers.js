@@ -11,7 +11,7 @@ const moment = require('moment');
 async function prepararDataPedidosDet(req, res) {
     try {
         const arrayPedidos = req.body.arrayPedidos;
-        const responsePedidos = req.body.responsePedidos;
+        const responsePedidos = req.body.responsePedidos.pedidos;
 
         logger.info('Iniciando la función prepararDataPedidosDet');
         logger.debug(`arrayPedidos ${JSON.stringify(arrayPedidos)}`);
