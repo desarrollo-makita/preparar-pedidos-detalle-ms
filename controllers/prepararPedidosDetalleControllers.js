@@ -33,7 +33,7 @@ async function prepararDataPedidosDet(req, res) {
 
         // Establecer correlativo y tipo de ítem para cada ítem
         for (const item of itemList) {
-            const pedidoEncontrado = responsePedidos.find(pedido => pedido.output.ResultadoID === item.pedido);
+            const pedidoEncontrado = responsePedidos.find(pedido => pedido.output.ResultadoID === item.pedido.toString());
             console.log("----------------> 02" , pedidoEncontrado);
 
             if (pedidoEncontrado) {
