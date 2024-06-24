@@ -24,7 +24,7 @@ async function prepararDataPedidosDet(req, res) {
                 pedido: elemento.pedido,
                 tipoDocumento: elemento.tipoDocumento,
                 folio: elemento.pedido,
-                rutCliente: elemento.codigo_posto,
+                rutCliente: elemento.cnpj,
                 observacion: elemento.observacao
             }))
         );
@@ -33,7 +33,7 @@ async function prepararDataPedidosDet(req, res) {
 
         // Establecer correlativo y tipo de ítem para cada ítem
         for (const item of itemList) {
-            const pedidoEncontrado = responsePedidos.find(pedido => pedido.idPedido === item.pedido);
+            const pedidoEncontrado = responsePedidos.find(pedido => pedido.output.ResultadoID === item.pedido);
             console.log("----------------> 02" , pedidoEncontrado);
 
             if (pedidoEncontrado) {
